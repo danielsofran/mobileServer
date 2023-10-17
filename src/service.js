@@ -1,53 +1,37 @@
 import {generateMagazin} from "./model";
+import dataStore from 'nedb-promise';
 
 export class Service {
-    constructor(pageSize = 10) {
-        this._data = [];
-        this._lastUpdated = new Date();
-        this._lastId = 0;
+    constructor(filename, autoload, pageSize = 10) {
+        this._store = dataStore({ filename, autoload });
         this._pageSize = pageSize;
     }
 
-    save(item) {
-        item.id = ++this._lastId;
-        this._data.push(item);
-        this._lastUpdated = item.date;
-        this._lastId = item.id;
-        return item;
+    async save(item) {
+        return await this._store.insert(item);
     }
 
-    get() {
-        return this._data;
+    async get(props) {
+        return await this._store.find(props);
     }
 
-    getById(id) {
-        return this._data.find(item => item.id == id);
+    async getOne(props) {
+        return await this._store.findOne(props);
+    }
+
+    async getPaginated(page) {
+        const skip = (page - 1) * this._pageSize;
+        const limit = this._pageSize;
+        return await this._store.find({}).skip(skip).limit(limit);
     }
 
     update(id, item) {
-        const index = this._data.findIndex(item => item.id == id);
-        if (index !== -1) {
-            this._data[index] = item;
-            this._lastUpdated = item.date;
-        }
+        this._store.update({ _id: id }, item);
     }
 
     remove(id) {
-        const index = this._data.findIndex(item => item.id == id);
-        if (index !== -1) {
-            this._data.splice(index, 1);
-            this._lastUpdated = new Date();
-        }
-        else {
+        this._store.remove({ _id: id }).error(err => {
             throw { errors: [{ field: 'id', error: `item with id ${id} not found` }] };
-        }
-    }
-
-    get lastUpdated() {
-        return this._lastUpdated;
-    }
-
-    addGeneratedItem() {
-        return this.save(generateMagazin(this._lastId + 1));
+        });
     }
 }

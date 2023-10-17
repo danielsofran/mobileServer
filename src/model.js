@@ -1,6 +1,6 @@
-export class Item { // magazin
-    constructor({ id, name, lat, long, date, hasDelivery }) {
-        this.id = id;
+export class Magazin { // magazin
+    constructor({ userId, name, lat, long, date, hasDelivery }) {
+        this.userId = userId;
         this.name = name;
         this.lat = lat;
         this.long = long;
@@ -31,11 +31,17 @@ const generateRandomGeoLocation = () => {
     return { lat: lat, long: lng };
 }
 
-export const generateMagazin = (n) => new Item({
-    id: `${n}`,
+export const generateMagazin = (n) => new Magazin({
     name: `Magazin ${n}`,
     lat: generateRandomGeoLocation().lat,
     long: generateRandomGeoLocation().long,
     date: new Date(Date.now() + n * 1000),
     hasDelivery: n % 2 === 0
 });
+
+export class User {
+    constructor({ username, password }) {
+        this.username = username;
+        this.password = password;
+    }
+}
