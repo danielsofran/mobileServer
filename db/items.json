@@ -1,10 +1,13 @@
 {"name":"Magazin 7","userId":"vI1GMkzBza5i82zz","lat":31.78529898412286,"long":-171.73451305840788,"date":{"$$date":1697572513982},"hasDelivery":false,"_id":"7A9ifmMjTxaPPYSx"}
-{"name":"Magazin 2","userId":"vI1GMkzBza5i82zj","lat":77.35385954537657,"long":82.2453136095238,"date":{"$$date":1697572508982},"hasDelivery":true,"_id":"7RqimF8QRylbuA32"}
+{"userId":"vI1GMkzBza5i82zj","name":"Magazin 2","lat":77.35385954537657,"long":82.2453136095238,"date":"2023-10-17T19:55:08.982Z","hasDelivery":false,"_id":"7RqimF8QRylbuA32"}
 {"name":"Magazin 4","userId":"vI1GMkzBza5i82zj","lat":-21.554312657198764,"long":41.4847576270279,"date":{"$$date":1697572510982},"hasDelivery":true,"_id":"AFsvjxVd3dbKjIUo"}
+{"userId":"vI1GMkzBza5i82zj","name":"M3","lat":0,"long":0,"date":"2023-10-23T13:44:00.000Z","hasDelivery":false,"_id":"E9oIfqnLAv1UeDZt"}
 {"name":"Magazin 5","userId":"vI1GMkzBza5i82zz","lat":-18.816119010310217,"long":-79.61961455718004,"date":{"$$date":1697572511982},"hasDelivery":false,"_id":"EYnJkHDjOxzBzRd8"}
-{"name":"Magazin 3","userId":"vI1GMkzBza5i82zj","lat":81.67333219495839,"long":-142.8105471460193,"date":{"$$date":1697572509982},"hasDelivery":false,"_id":"K9Q5jTPaWVhVKwiV"}
+{"userId":"vI1GMkzBza5i82zj","name":"Magazin 3","lat":81.67333219495839,"long":-142.8105471460193,"date":"2023-10-17T19:55:09.982Z","hasDelivery":true,"_id":"K9Q5jTPaWVhVKwiV"}
 {"name":"Magazin 9","userId":"vI1GMkzBza5i82zz","lat":-70.32302354826393,"long":161.24871955320714,"date":{"$$date":1697572515982},"hasDelivery":false,"_id":"L8DOzRuf5Qkq3ixg"}
+{"userId":"vI1GMkzBza5i82zj","name":"M2","lat":0,"long":0,"date":"2023-10-29T11:43:00.294Z","hasDelivery":true,"_id":"NVT36VotdjyPvMRe"}
 {"name":"Magazin 6","userId":"vI1GMkzBza5i82zz","lat":-54.445350766045614,"long":20.336069846548185,"date":{"$$date":1697572512982},"hasDelivery":true,"_id":"O9ZyFJ9XOuiXFtmk"}
 {"name":"Magazin 8","userId":"vI1GMkzBza5i82zz","lat":-81.65650683277424,"long":109.33158469791107,"date":{"$$date":1697572514982},"hasDelivery":true,"_id":"YNNrq1USatjpahCJ"}
 {"name":"Magazin 0","userId":"vI1GMkzBza5i82zj","lat":61.56943752011421,"long":-104.31866527261934,"date":{"$$date":1697572506982},"hasDelivery":true,"_id":"m6tqwymYRyAWDObm"}
 {"name":"Magazin 1","userId":"vI1GMkzBza5i82zj","lat":5.631826282855215,"long":-35.22750285556816,"date":{"$$date":1697572507982},"hasDelivery":false,"_id":"qSOtejJ8RvQjicHZ"}
+{"userId":"vI1GMkzBza5i82zj","name":"Prrratata","lat":0,"long":0,"date":"2023-10-30T21:32:38.881Z","hasDelivery":true,"_id":"YlRx9h2SUHYVFNRG"}

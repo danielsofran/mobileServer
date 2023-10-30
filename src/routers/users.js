@@ -21,6 +21,7 @@ authRouter.post('/signup', async (ctx) => {
 
 authRouter.post('/login', async (ctx) => {
     const credentials = ctx.request.body;
+
     const user = await service.getOne({ username: credentials.username });
     if (user && credentials.password === user.password) {
         ctx.response.body = { token: createToken(user) };

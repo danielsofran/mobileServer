@@ -1,8 +1,7 @@
-import {generateMagazin} from "./model";
 import dataStore from 'nedb-promise';
 
 export class Service {
-    constructor(filename, autoload, pageSize = 10) {
+    constructor(filename, autoload, pageSize = 2) {
         this._store = dataStore({ filename, autoload });
         this._pageSize = pageSize;
     }
@@ -12,17 +11,24 @@ export class Service {
     }
 
     async get(props) {
-        return await this._store.find(props);
+        return await this._store.find(props).then(items => {
+            return items;
+        });
     }
 
     async getOne(props) {
         return await this._store.findOne(props);
     }
 
-    async getPaginated(page) {
+    async getPaginated(props, page) {
         const skip = (page - 1) * this._pageSize;
         const limit = this._pageSize;
-        return await this._store.find({}).skip(skip).limit(limit);
+
+        const results = await this._store.find(props);
+        if(results.length < skip) {
+            return undefined
+        }
+        return results.slice(skip, Math.min(skip + limit, results.length));
     }
 
     update(id, item) {

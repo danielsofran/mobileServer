@@ -31,7 +31,7 @@ app
 
 // protected
 const protectedApiRouter = new Router({ prefix });
-protectedApiRouter.use(jwt(jwtConfig)); // jwtConfig = {secret: 'my-secret'}
+app.use(jwt(jwtConfig)); // jwtConfig = {secret: 'my-secret'}
 protectedApiRouter.use('/magazine', magazinRouter.routes());
 app
     .use(protectedApiRouter.routes())
