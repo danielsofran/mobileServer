@@ -137,11 +137,11 @@ for(let i = 0; i < 10; i++) {
     service.addGeneratedItem()
 }
 
-setInterval(() => {
-  let item = service.addGeneratedItem();
-  console.log(`New item: ${item.name}`);
-  broadcast({ event: 'created', payload: { item } });
-}, 15000);
+// setInterval(() => {
+//   let item = service.addGeneratedItem();
+//   console.log(`New item: ${item.name}`);
+//   broadcast({ event: 'created', payload: { item } });
+// }, 15000);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
